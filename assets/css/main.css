@@ -1,15 +1,5 @@
-/**
-* Template Name: Personal
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Updated: Mar 05 2025 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -19,22 +9,31 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #000000; /* Background color for the entire website, including individual sections */
-  --default-color: #fafafa; /* Default color used for the majority of the text content across the entire website */
+  --background-color: #F3EFEA; /* Background color for the entire website, including individual sections */
+  --default-color: #2E2E2E; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #18d26e; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #2F5EA8; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #1a1a1a; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #000000; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  /* Cores */
+  --color-primary: #2F5EA8; /* Azul Assinatura */
+  --azul-hover: #274F8D;
+  --color-secondary: #A67C52; /* Caramelo Sofisticado */
+  --color-bg: #F3EFEA; /* Fundo Elegante */
+  --color-text: #2E2E2E; /* Texto Principal */
+  /* Fontes */
+  --font-primary: 'Playfair Display', serif;
+  --font-secondary: 'Montserrat', sans-serif;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #fafafa;  /* The default color of the main navmenu links */
-  --nav-hover-color: #18d26e; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #2E2E2E;  /* The default color of the main navmenu links */
+  --nav-hover-color: #2F5EA8; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #1a1a1a; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #1a1a1a; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #fafafa; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #18d26e; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-color: #2E2E2E; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #2F5EA8; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -45,9 +44,9 @@
 }
 
 .dark-background {
-  --background-color: rgba(15, 15, 15, 0.975);
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
+  --background-color: #F3EFEA;
+  --default-color: #F3EFEA;
+  --heading-color: #F3EFEA;
   --surface-color: #292929f9;
   --contrast-color: #000000;
 }
@@ -61,9 +60,10 @@
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-family: var(--default-font);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: var(--fonte-corpo);
+  line-height: 1.6;
 }
 
 a {
@@ -83,8 +83,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-weight: 600;
 }
 
 /* PHP Email Form Messages
@@ -144,7 +145,7 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   --background-color: rgba(0, 0, 0, 0);
-  color: var(--default-color);
+  --color: var(--default-color);
   background-color: var(--background-color);
   padding: 15px 0;
   transition: all 0.5s;
@@ -164,17 +165,18 @@ h6 {
   font-size: 30px;
   margin: 0;
   font-weight: 700;
-  color: var(--heading-color);
+  color: var(--color-text);
 }
 
-.scrolled .header {
+/*.scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-}
+}*/
 
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: rgba(0, 0, 0, 0.8);
+  --background-color: rgba(0, 0, 0, 15%);
+  --color:
 }
 
 /*--------------------------------------------------------------
@@ -192,6 +194,7 @@ h6 {
     display: flex;
     list-style: none;
     align-items: center;
+    justify-content: center;
   }
 
   .navmenu li {
@@ -442,7 +445,7 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
+  color: var(--surface-color);
   background-color: var(--background-color);
   font-size: 14px;
   text-align: center;
@@ -627,7 +630,7 @@ h6 {
 --------------------------------------------------------------*/
 section,
 .section {
-  color: var(--default-color);
+  color: var(--surface-color);
   background-color: var(--background-color);
   padding: 60px 0;
   scroll-margin-top: 100px;
@@ -701,6 +704,7 @@ section,
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 15%;
   z-index: 1;
 }
 
@@ -1473,4 +1477,16 @@ section,
 
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+/* Forçar o estilo nos botões do seu portfólio */
+.btn, .button, .btn-primary {
+  background-color: #2F5EA8 !important;
+  border-color: #2F5EA8 !important;
+  color: #fff !important;
+}
+
+.btn:hover, .button:hover {
+  background-color: #274F8D !important;
+  border-color: #274F8D !important;
 }
