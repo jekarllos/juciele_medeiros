@@ -2,25 +2,26 @@
 
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Montserrat",  sans-serif, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Playfair Display",  serif;
+  --nav-font: "Montserrat",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #F3EFEA; /* Background color for the entire website, including individual sections */
   --default-color: #2E2E2E; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
+  --heading-color: #2F5EA8; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #2F5EA8; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-secondary: #A67C52;
   --surface-color: #1a1a1a; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #000000; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
   /* Cores */
   --color-primary: #2F5EA8; /* Azul Assinatura */
   --azul-hover: #274F8D;
   --color-secondary: #A67C52; /* Caramelo Sofisticado */
   --color-bg: #F3EFEA; /* Fundo Elegante */
-  --color-text: #2E2E2E; /* Texto Principal */
+  --color-text: #2E2E2E; /* Texto Principal */ 
   /* Fontes */
   --font-primary: 'Playfair Display', serif;
   --font-secondary: 'Montserrat', sans-serif;
@@ -787,7 +788,7 @@ section,
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: var(--accent-color);
+  color: var(--accent-secondary);
   line-height: 0;
 }
 
@@ -1084,7 +1085,7 @@ section,
 }
 
 .services .service-item .icon i {
-  color: var(--contrast-color);
+  color: var(--accent-secondary);
   font-size: 28px;
   transition: ease-in-out 0.3s;
 }
@@ -1387,6 +1388,7 @@ section,
 # Contact Section
 --------------------------------------------------------------*/
 .contact .info-item {
+  color: #A67C52;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 20px 30px;
 }
@@ -1470,13 +1472,18 @@ section,
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
-  padding: 10px 30px;
+  padding: 12px 40px;
   transition: 0.4s;
-  border-radius: 50px;
+  border-radius: 4px;
+  font-family: var(--default-font);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: #274f8d;
+  /*background: color-mix(in srgb, var(--accent-color), transparent 20%);*/
 }
 
 /* Forçar o estilo nos botões do seu portfólio */
