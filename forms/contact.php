@@ -1,44 +1,33 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+// 1. Defina o e-mail que vai receber as mensagens
+$receiving_email_address = 'jekarllos@gmail.com';
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+// 2. Coleta os dados do formulário
+$name = $_POST['name'] ?? '';
+$email = $_POST['email'] ?? '';
+$subject = $_POST['subject'] ?? '';
+$message = $_POST['message'] ?? '';
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+// 3. Validação básica
+if(empty($name) || empty($email) || empty($message)) {
+    die('Por favor, preencha todos os campos obrigatórios.');
+}
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+// 4. Monta o corpo do e-mail
+$email_content = "Nome: $name\n";
+$email_content .= "Email: $email\n\n";
+$email_content .= "Assunto: $subject\n\n";
+$email_content .= "Mensagem:\n$message\n";
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+// 5. Cabeçalhos do e-mail (importante para não cair no spam)
+$headers = "From: $name <$receiving_email_address>\r\n";
+$headers .= "Reply-To: $email\r\n";
+$headers .= "X-Mailer: PHP/" . phpversion();
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  if(isset($_POST['phone'])) {
-    $contact->add_message( $_POST['phone'], 'Phone');
-  }
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
+// 6. Envia o e-mail
+if(mail($receiving_email_address, "Contato Portfólio: $subject", $email_content, $headers)) {
+    echo "OK"; // O validate.js espera "OK" para exibir a mensagem de sucesso
+} else {
+    echo "Erro ao enviar o e-mail. Tente novamente mais tarde.";
+}
 ?>

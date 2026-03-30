@@ -350,7 +350,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-dropdown-color);
+    color: var(--contrast-color);
     padding: 10px 20px;
     font-family: var(--nav-font);
     font-size: 17px;
@@ -447,7 +447,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--surface-color);
-  background-color: var(--background-color);
+  background-color: #EBE6DF;
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
@@ -655,7 +655,7 @@ section,
 }
 
 .section-title h2 {
-  font-size: 14px;
+  font-size: 30px;
   font-weight: 500;
   padding: 0;
   line-height: 1px;
@@ -973,7 +973,7 @@ section,
   font-style: italic;
   margin: 0 15px 0 15px;
   padding: 20px 20px 60px 20px;
-  background: var(--surface-color);
+  background: var(--contrast-color);
   border-radius: 6px;
   position: relative;
   z-index: 1;
