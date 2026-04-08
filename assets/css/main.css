@@ -446,7 +446,7 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--surface-color);
+  /*color: var(--surface-color);*/
   background-color: #EBE6DF;
   font-size: 14px;
   text-align: center;
@@ -558,7 +558,7 @@ h6 {
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--contrast-color);
+  color: var(--color-text);
   line-height: 0;
 }
 
@@ -1023,7 +1023,8 @@ section,
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  /*color: color-mix(in srgb, var(--default-color), transparent 20%);*/
+  color: var(--accent-color);
   margin-bottom: 10px;
 }
 
@@ -1063,7 +1064,8 @@ section,
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {
-  background-color: var(--surface-color);
+  background-color: #EBE6DF;
+  border-radius: 5px;
   text-align: center;
   padding: 80px 20px;
   transition: all ease-in-out 0.3s;
